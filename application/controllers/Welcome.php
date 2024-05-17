@@ -20,6 +20,14 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+		$this->load->database();
+		$teste = $this->db->get('tb_movies', 1);
+	
+		print('<pre>');
+		print_r($teste->result());
+		print('</pre>');
+
 		$this->load->view('welcome_message');
+
 	}
 }
